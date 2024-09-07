@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8CDA804F-35FD-4D69-BB38-21744AC81373}|HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurant.en\\usertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CDA804F-35FD-4D69-BB38-21744AC81373}|HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj|solutionrelative:hotplaterestaurant.en\\usertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB3B76E1-2D9F-41DE-8AC8-2E3A9F1B8723}|HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurantapi\\controllers\\usertablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3B76E1-2D9F-41DE-8AC8-2E3A9F1B8723}|HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj|solutionrelative:hotplaterestaurantapi\\controllers\\usertablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8CDA804F-35FD-4D69-BB38-21744AC81373}|HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurant.en\\categorytable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CDA804F-35FD-4D69-BB38-21744AC81373}|HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj|solutionrelative:hotplaterestaurant.en\\categorytable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB3B76E1-2D9F-41DE-8AC8-2E3A9F1B8723}|HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurantapi\\controllers\\categorytablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3B76E1-2D9F-41DE-8AC8-2E3A9F1B8723}|HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj|solutionrelative:hotplaterestaurantapi\\controllers\\categorytablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0BFF8A9-219D-4437-AA02-3B01642C720F}|HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurant.dal\\dbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0BFF8A9-219D-4437-AA02-3B01642C720F}|HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj|solutionrelative:hotplaterestaurant.dal\\dbcontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{107115CA-45EA-439B-A202-FF2FD0D118E6}|HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurant.bl\\usertablebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{107115CA-45EA-439B-A202-FF2FD0D118E6}|HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj|solutionrelative:hotplaterestaurant.bl\\usertablebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0BFF8A9-219D-4437-AA02-3B01642C720F}|HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurant.dal\\usertabledal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0BFF8A9-219D-4437-AA02-3B01642C720F}|HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj|solutionrelative:hotplaterestaurant.dal\\usertabledal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0BFF8A9-219D-4437-AA02-3B01642C720F}|HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurant.dal\\foodtabledal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0BFF8A9-219D-4437-AA02-3B01642C720F}|HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj|solutionrelative:hotplaterestaurant.dal\\foodtabledal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB3B76E1-2D9F-41DE-8AC8-2E3A9F1B8723}|HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurantapi\\controllers\\ordertablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3B76E1-2D9F-41DE-8AC8-2E3A9F1B8723}|HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj|solutionrelative:hotplaterestaurantapi\\controllers\\ordertablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB3B76E1-2D9F-41DE-8AC8-2E3A9F1B8723}|HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurantapi\\controllers\\foodtablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB3B76E1-2D9F-41DE-8AC8-2E3A9F1B8723}|HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj|solutionrelative:hotplaterestaurantapi\\controllers\\foodtablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8CDA804F-35FD-4D69-BB38-21744AC81373}|HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj|c:\\users\\escobar\\source\\repos\\hotplateburguer\\hotplaterestaurant.en\\foodtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CDA804F-35FD-4D69-BB38-21744AC81373}|HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj|solutionrelative:hotplaterestaurant.en\\foodtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,106 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "categoryTable.cs",
-              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\categoryTable.cs",
-              "RelativeDocumentMoniker": "HotPlateRestaurant.EN\\categoryTable.cs",
-              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\categoryTable.cs",
-              "RelativeToolTip": "HotPlateRestaurant.EN\\categoryTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "userTableController.cs",
+              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\Controllers\\userTableController.cs",
+              "RelativeDocumentMoniker": "HotPlateRestaurantAPI\\Controllers\\userTableController.cs",
+              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\Controllers\\userTableController.cs",
+              "RelativeToolTip": "HotPlateRestaurantAPI\\Controllers\\userTableController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T16:18:45.384Z",
+              "WhenOpened": "2024-09-07T16:30:11.458Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DBContexto.cs",
-              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.DAL\\DBContexto.cs",
-              "RelativeDocumentMoniker": "HotPlateRestaurant.DAL\\DBContexto.cs",
-              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.DAL\\DBContexto.cs",
-              "RelativeToolTip": "HotPlateRestaurant.DAL\\DBContexto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "categoryTableController.cs",
+              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\Controllers\\categoryTableController.cs",
+              "RelativeDocumentMoniker": "HotPlateRestaurantAPI\\Controllers\\categoryTableController.cs",
+              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\Controllers\\categoryTableController.cs",
+              "RelativeToolTip": "HotPlateRestaurantAPI\\Controllers\\categoryTableController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T16:18:06.006Z",
+              "WhenOpened": "2024-09-07T16:29:24.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "userTableBL.cs",
-              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.BL\\userTableBL.cs",
-              "RelativeDocumentMoniker": "HotPlateRestaurant.BL\\userTableBL.cs",
-              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.BL\\userTableBL.cs",
-              "RelativeToolTip": "HotPlateRestaurant.BL\\userTableBL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T16:17:25.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "userTableDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.DAL\\userTableDAL.cs",
-              "RelativeDocumentMoniker": "HotPlateRestaurant.DAL\\userTableDAL.cs",
-              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.DAL\\userTableDAL.cs",
-              "RelativeToolTip": "HotPlateRestaurant.DAL\\userTableDAL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T16:16:47.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "userTable.cs",
-              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\userTable.cs",
-              "RelativeDocumentMoniker": "HotPlateRestaurant.EN\\userTable.cs",
-              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\userTable.cs",
-              "RelativeToolTip": "HotPlateRestaurant.EN\\userTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T16:13:46.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "foodTableController.cs",
               "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\Controllers\\foodTableController.cs",
               "RelativeDocumentMoniker": "HotPlateRestaurantAPI\\Controllers\\foodTableController.cs",
               "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\Controllers\\foodTableController.cs",
               "RelativeToolTip": "HotPlateRestaurantAPI\\Controllers\\foodTableController.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T15:27:44.994Z",
+              "WhenOpened": "2024-09-07T16:28:15.119Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "foodTable.cs",
-              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\foodTable.cs",
-              "RelativeDocumentMoniker": "HotPlateRestaurant.EN\\foodTable.cs",
-              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\foodTable.cs",
-              "RelativeToolTip": "HotPlateRestaurant.EN\\foodTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "orderTableController.cs",
+              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\Controllers\\orderTableController.cs",
+              "RelativeDocumentMoniker": "HotPlateRestaurantAPI\\Controllers\\orderTableController.cs",
+              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\Controllers\\orderTableController.cs",
+              "RelativeToolTip": "HotPlateRestaurantAPI\\Controllers\\orderTableController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T15:27:25.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "foodTableDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.DAL\\foodTableDAL.cs",
-              "RelativeDocumentMoniker": "HotPlateRestaurant.DAL\\foodTableDAL.cs",
-              "ToolTip": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.DAL\\foodTableDAL.cs",
-              "RelativeToolTip": "HotPlateRestaurant.DAL\\foodTableDAL.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAIwCkAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T15:24:25.8Z",
+              "WhenOpened": "2024-09-07T16:28:07.662Z",
               "EditorCaption": ""
             }
           ]
