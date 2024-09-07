@@ -10,9 +10,35 @@ namespace HotPlateRestaurant.BL
 {
     public class foodTableBL
     {
+
+        public async Task<int> CrearAsync(foodTable pFoodTable)
+        {
+            return await foodTableDAL.CrearAsync(pFoodTable);
+        }
+
+        public async Task<int> ModificarAsync(foodTable pFoodTable)
+        {
+            return await foodTableDAL.ModificarAsync(pFoodTable);
+        }
+
+        public async Task<int> DeleteAsync(foodTable pFoodTable)
+        {
+            return await foodTableDAL.DeleteAsync(pFoodTable);
+        }
+
+        public async Task<foodTable> ObtenerPorIdAsync(foodTable pFoodTable)
+        {
+            return await foodTableDAL.ObtenerPorIdAsync(pFoodTable);
+        }
+
         public async Task<List<foodTable>> ObtenerTodosAsync()
         {
             return await foodTableDAL.ObtenerTodosAsync();
+        }
+
+        public async Task<List<foodTable>> BuscarAsync(foodTable pFoodTable)
+        {
+            return await foodTableDAL.BuscarAsync(pFoodTable);
         }
     }
 }

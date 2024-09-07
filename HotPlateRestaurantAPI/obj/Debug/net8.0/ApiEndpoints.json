@@ -28,18 +28,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "pFoodTable",
+        "Type": "System.Object",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "HotPlateRestaurantAPI.Controllers.foodTableController",
@@ -57,7 +51,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "HotPlateRestaurant.EN.foodTable",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -81,18 +75,12 @@
         "IsRequired": true
       },
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "pFoodTable",
+        "Type": "System.Object",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "HotPlateRestaurantAPI.Controllers.foodTableController",
@@ -108,12 +96,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   }
 ]

@@ -9,9 +9,11 @@ namespace HotPlateRestaurant.EN
     public class foodTable
     {
         public int Id { get; set; }
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
         public string Title { get; set; }   
         public string Price { get; set; }   
         public string Picture { get; set; }
+
+        public categoryTable categoryTable { get; set; }
     }
 }

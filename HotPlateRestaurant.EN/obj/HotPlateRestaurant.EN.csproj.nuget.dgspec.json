@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {}
+    "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
+    "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj",
+        "projectUniqueName": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj",
         "projectName": "HotPlateRestaurant.EN",
-        "projectPath": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj",
-        "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.EN\\obj\\",
+        "projectPath": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj",
+        "packagesPath": "C:\\Users\\Escobar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MINEDUCYT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Escobar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

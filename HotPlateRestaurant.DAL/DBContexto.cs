@@ -6,7 +6,12 @@ namespace HotPlateRestaurant.DAL
 {
     public class DBContexto : DbContext
     {
-        public DbSet<foodTable> Foods { get; set; }
+        public DbSet<foodTable> foodTable { get; set; }
+        public DbSet<categoryTable> categoryTable { get; set; }
+        public DbSet<orderTable> orderTable { get; set; }
+
+        public DbSet<userTable> userTable { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql("Server=localhost;Database=hotplaterestaurant;User=root;Password=password;",
