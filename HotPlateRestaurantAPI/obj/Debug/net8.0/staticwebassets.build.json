@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zkRWRMKpkMJsZSNoLleSWm+yQlmXlALN91LW7y0EFVE=",
+  "Source": "HotPlateRestaurantAPI",
+  "BasePath": "_content/HotPlateRestaurantAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
