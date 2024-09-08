@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HotPlateRestaurant.BL;
 using HotPlateRestaurant.EN;
+using System.Text.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,36 +11,87 @@ namespace HotPlateRestaurantAPI.Controllers
     [ApiController]
     public class userTableController : ControllerBase
     {
-        // GET: api/<userTableController>
+        private userTableBL userTableBl = new userTableBL();
+        // GET: api/<UsuarioController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<userTable>> Get()
         {
-            return new string[] { "value1", "value2" };
+            userTable usuario = new userTable();
+            return await userTableBl.ObtenerTodosAsync();
         }
 
-        // GET api/<userTableController>/5
+        // GET api/<UsuarioController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<userTable> Get(int id)
         {
-            return "value";
+            return await userTableBl.ObtenerPorIdAsync(new userTable { Id = id });
         }
 
-        // POST api/<userTableController>
+
+        // POST api/<UsuarioController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult> Post([FromBody] Object pUserTable)
         {
+            try
+            {
+                var option = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                var strUser = JsonSerializer.Serialize(pUserTable);
+                userTable user = JsonSerializer.Deserialize<userTable>(strUser, option);
+                await userTableBl.CrearAsync(user);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
-
-        // PUT api/<userTableController>/5
+        // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<ActionResult> Put(int id, [FromBody] object pUserTable)
         {
+            try
+            {
+                var option = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                var strUser = JsonSerializer.Serialize(pUserTable);
+                userTable user = JsonSerializer.Deserialize<userTable>(strUser, option);
+                if (user.Id == id)
+                {
+                    await userTableBl.ModificarAsync(user);
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
-        // DELETE api/<userTableController>/5
+
+        // DELETE api/<UsuarioController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
+            try
+            {
+                await userTableBl.DeleteAsync(new userTable { Id = id });
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

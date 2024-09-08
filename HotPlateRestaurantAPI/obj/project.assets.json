@@ -1192,19 +1192,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Escobar\\.nuget\\packages\\": {}
+    "C:\\Users\\MINEDUCYT\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
+      "projectUniqueName": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
       "projectName": "HotPlateRestaurantAPI",
-      "projectPath": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
-      "packagesPath": "C:\\Users\\Escobar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurantAPI\\obj\\",
+      "projectPath": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
+      "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurantAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Escobar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MINEDUCYT\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1219,14 +1219,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj": {
-              "projectPath": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj"
+            "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj": {
+              "projectPath": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj"
             },
-            "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj": {
-              "projectPath": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj"
+            "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj": {
+              "projectPath": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj"
             },
-            "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
-              "projectPath": "C:\\Users\\Escobar\\source\\repos\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj"
+            "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
+              "projectPath": "C:\\Users\\MINEDUCYT\\source\\repos\\HotPlateRestaurant\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj"
             }
           }
         }
