@@ -2,6 +2,7 @@
 using HotPlateRestaurant.BL;
 using HotPlateRestaurant.EN;
 using System.Text.Json;
+using HotPlateRestaurant.DAL;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -91,6 +92,24 @@ namespace HotPlateRestaurantAPI.Controllers
             {
 
                 return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost("Buscar")]
+        public async Task<List<userTable>> Buscar([FromBody] object pUserTable)
+        {
+            try
+            {
+                var option = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                var strUserTable = JsonSerializer.Serialize(pUserTable);
+                userTable user = JsonSerializer.Deserialize<userTable>(strUserTable, option);
+                return await userTableBl.BuscarAsync(user);
+            }
+            catch (Exception ex)
+            {
+                return new List<userTable>();
             }
         }
     }

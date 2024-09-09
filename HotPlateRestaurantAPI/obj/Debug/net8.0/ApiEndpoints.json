@@ -233,7 +233,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HotPlateRestaurant.EN.orderTable, HotPlateRestaurant.EN, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -252,18 +252,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "pOrderTable",
+        "Type": "System.Object",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "HotPlateRestaurantAPI.Controllers.orderTableController",
@@ -281,7 +275,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "HotPlateRestaurant.EN.orderTable",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -305,18 +299,12 @@
         "IsRequired": true
       },
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "pOrderTable",
+        "Type": "System.Object",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "HotPlateRestaurantAPI.Controllers.orderTableController",
@@ -332,10 +320,30 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotPlateRestaurantAPI.Controllers.orderTableController",
+    "Method": "Buscar",
+    "RelativePath": "api/orderTable/Buscar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pOrderTable",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.Collections.Generic.List\u00601[[HotPlateRestaurant.EN.orderTable, HotPlateRestaurant.EN, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
@@ -438,5 +446,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotPlateRestaurantAPI.Controllers.userTableController",
+    "Method": "Buscar",
+    "RelativePath": "api/userTable/Buscar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pUserTable",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[HotPlateRestaurant.EN.userTable, HotPlateRestaurant.EN, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
