@@ -1,6 +1,7 @@
 ﻿using HotPlateRestaurant.BL;
 using HotPlateRestaurant.EN;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,36 +11,99 @@ namespace HotPlateRestaurantAPI.Controllers
     [ApiController]
     public class categoryTableController : ControllerBase
     {
-        // GET: api/<categoryTableController>
+        private categoryTableBL categorytableBl = new categoryTableBL();
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<categoryTable>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return await categorytableBl.ObtenerTodosAsync();
         }
 
-        // GET api/<categoryTableController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<categoryTable> Get(int id)
         {
-            return "value";
+            categoryTable categorytable = new categoryTable();
+            categorytable.Id = id;
+            return await categorytableBl.ObtenerPorIdAsync(categorytable);
         }
 
-        // POST api/<categoryTableController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult> Post([FromBody] object pCategoryTable)
         {
+            try
+            {
+                var option = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                };
+                string strCategoryTable = JsonSerializer.Serialize(pCategoryTable);
+                categoryTable categorytable = JsonSerializer.Deserialize<categoryTable>(strCategoryTable, option);
+                await categorytableBl.CrearAsync(categorytable);
+                return Ok();
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest();
+            }
         }
 
-        // PUT api/<categoryTableController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<ActionResult> Put(int id, [FromBody] object pCategoryTable)
         {
-        }
+            try
+            {
+                var option = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                string strCategoryTable = JsonSerializer.Serialize(pCategoryTable);
+                categoryTable categorytable = JsonSerializer.Deserialize<categoryTable>(strCategoryTable, option);
+                if (categorytable.Id == id)
+                {
+                    await categorytableBl.ModificarAsync(categorytable);
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
 
-        // DELETE api/<categoryTableController>/5
+                return BadRequest();
+            }
+        }
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
+            try
+            {
+                await categorytableBl.DeleteAsync(new categoryTable { Id = id });
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost("Buscar")]
+        public async Task<List<categoryTable>> Buscar([FromBody] object pCategoryTable)
+        {
+            try
+            {
+                var option = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                var strCategoryTable = JsonSerializer.Serialize(pCategoryTable);
+                categoryTable rol = JsonSerializer.Deserialize<categoryTable>(strCategoryTable, option);
+                return await categorytableBl.BuscarAsync(rol);
+            }
+            catch (Exception ex)
+            {
+                return new List<categoryTable>();
+            }
         }
     }
 }
