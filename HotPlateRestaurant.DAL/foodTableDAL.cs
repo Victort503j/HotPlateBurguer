@@ -63,8 +63,26 @@ namespace HotPlateRestaurant.DAL
                 using (var dbContexto = new DBContexto())
                 {
                     var foodTable = await dbContexto.foodTable.FirstOrDefaultAsync(s => s.Id == pFoodTable.Id);
-                    dbContexto.foodTable.Remove(pFoodTable);
+                    dbContexto.foodTable.Remove(foodTable);
                     result = await dbContexto.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                result = 0;
+                throw new Exception("Ocurrio un error interno", ex);
+            }
+            return result;
+        }
+
+        public static async Task<foodTable> ObtenerPorIdAsync(foodTable pFoodTable)
+        {
+            var foodTable = new foodTable();
+            try
+            {
+                using (var dbContexto = new DBContexto())
+                {
+                    foodTable = await dbContexto.foodTable.FirstOrDefaultAsync(s => s.Id == pFoodTable.Id);
                 }
             }
             catch (Exception ex)
@@ -72,19 +90,7 @@ namespace HotPlateRestaurant.DAL
 
                 throw new Exception("Ocurrio un error interno");
             }
-            return result;
-        }
-
-        public static async Task<foodTable> ObtenerPorIdAsync(foodTable pFoodTable)
-        {
-
-            foodTable foodTable = new foodTable();
-            using (var dbContexto = new DBContexto())
-            {
-                foodTable = await dbContexto.foodTable.FirstOrDefaultAsync(s => s.Id == pFoodTable.Id);
-            }
             return foodTable;
-
         }
 
         public static async Task<List<foodTable>> ObtenerTodosAsync()
@@ -100,7 +106,7 @@ namespace HotPlateRestaurant.DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocurrio un error interno");
+                throw new Exception("Ocurrio un error interno", ex);
             }
             return foodTables;
         }
@@ -110,7 +116,8 @@ namespace HotPlateRestaurant.DAL
         {
             if (pFoodTable.Id > 0)
                 pQuery = pQuery.Where(s => s.Id == pFoodTable.Id);
-
+            if (pFoodTable.CategoryId > 0)
+                pQuery = pQuery.Where(s => s.CategoryId == pFoodTable.CategoryId);
             if (!string.IsNullOrWhiteSpace(pFoodTable.Title))
                 pQuery = pQuery.Where(s => s.Title.Contains(pFoodTable.Title));
             pQuery = pQuery.OrderByDescending(s => s.Id).AsQueryable();
@@ -131,4 +138,3 @@ namespace HotPlateRestaurant.DAL
         }
     }
 }
-

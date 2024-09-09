@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HotPlateRestaurantAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02fa295baf093d767c033e5c65c21c5a243a9c06")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+807dacadecf9c7bb31d8fbc82b43003e460adf7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("HotPlateRestaurantAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotPlateRestaurantAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

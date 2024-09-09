@@ -224,6 +224,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "HotPlateRestaurantAPI.Controllers.foodTableController",
+    "Method": "Buscar",
+    "RelativePath": "api/foodTable/Buscar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pFoodTable",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[HotPlateRestaurant.EN.foodTable, HotPlateRestaurant.EN, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "HotPlateRestaurantAPI.Controllers.orderTableController",
     "Method": "Get",
     "RelativePath": "api/orderTable",

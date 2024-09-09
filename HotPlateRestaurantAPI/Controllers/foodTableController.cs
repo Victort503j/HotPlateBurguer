@@ -25,7 +25,7 @@ namespace HotPlateRestaurantAPI.Controllers
         [HttpGet("{id}")]
         public async Task<foodTable> Get(int id)
         {
-            return await foodTableBL.ObtenerPorIdAsync(new foodTable { Id = id});
+            return await foodTableBL.ObtenerPorIdAsync(new foodTable { Id = id });
         }
 
         // POST api/<foodTableController>
@@ -35,7 +35,7 @@ namespace HotPlateRestaurantAPI.Controllers
             try
             {
                 var option = new JsonSerializerOptions
-                { 
+                {
                     PropertyNameCaseInsensitive = true,
                 };
                 string srtFood = JsonSerializer.Serialize(pFoodTable);
@@ -90,6 +90,26 @@ namespace HotPlateRestaurantAPI.Controllers
             {
 
                 return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("Buscar")]
+        public async Task<List<foodTable>> Buscar([FromBody] object pFoodTable)
+        {
+
+            try
+            {
+                var option = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                var strFood = JsonSerializer.Serialize(pFoodTable);
+                foodTable food = JsonSerializer.Deserialize<foodTable>(strFood, option);
+                return await foodTableBL.BuscarAsync(food);
+            }
+            catch (Exception ex)
+            {
+                return new List<foodTable>();
             }
         }
     }
