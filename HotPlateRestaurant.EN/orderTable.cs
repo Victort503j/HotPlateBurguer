@@ -13,7 +13,7 @@ namespace HotPlateRestaurant.EN
         [Key]
         public int Confirmation_ID { get; set; }  
         public string CustomerName { get; set; }    
-        public string Total { get; set; }      
+        public decimal Total { get; set; }      
         public DateTime OrderTime { get; set; } = DateTime.Now;
         public string Address { get; set; }     
         public string Email { get; set; }          
@@ -21,6 +21,8 @@ namespace HotPlateRestaurant.EN
         public string Orders { get; set; }
         [NotMapped]
         public int Top_Aux { get; set; }
+
+        public ICollection<OrderDetail>orderDetails { get; set; }
 
     }
 }

@@ -11,6 +11,7 @@ namespace HotPlateRestaurant.DAL
         public DbSet<orderTable> orderTable { get; set; }
 
         public DbSet<userTable> userTable { get; set; }
+        public DbSet<OrderDetail> orderDetail { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

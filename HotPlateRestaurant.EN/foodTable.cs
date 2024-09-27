@@ -18,5 +18,6 @@ namespace HotPlateRestaurant.EN
         public string Picture { get; set; }
 
         public categoryTable categoryTable { get; set; }
+        public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

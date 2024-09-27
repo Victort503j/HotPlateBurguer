@@ -66,7 +66,9 @@ namespace HotPlateRestaurant.DAL
             List<categoryTable> categoriestable = new List<categoryTable>();
             using (var dbContexto = new DBContexto())
             {
-                categoriestable = await dbContexto.categoryTable.ToListAsync();
+                categoriestable = await dbContexto.categoryTable
+                    .OrderByDescending(s => s.Id)
+                    .ToListAsync();
             }
             return categoriestable;
         }

@@ -100,7 +100,9 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    foodTables = await dbContexto.foodTable.ToListAsync();
+                    foodTables = await dbContexto.foodTable
+                        .OrderByDescending(s => s.Id)
+                        .ToListAsync();
                 }
             }
             catch (Exception ex)

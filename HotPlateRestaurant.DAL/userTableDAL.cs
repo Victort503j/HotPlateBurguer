@@ -140,7 +140,9 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    users = await dbContexto.userTable.ToListAsync();
+                    users = await dbContexto.userTable
+                        .OrderByDescending(s => s.Id)
+                        .ToListAsync();
                 }
             }
             catch (Exception ex)

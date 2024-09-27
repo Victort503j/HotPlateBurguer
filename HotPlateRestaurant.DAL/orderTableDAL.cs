@@ -1,10 +1,6 @@
 ﻿using HotPlateRestaurant.EN;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MySqlConnector;
 
 namespace HotPlateRestaurant.DAL
 {
@@ -18,13 +14,39 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    dbContexto.Add(pOrderTable);
+                    var order = new orderTable
+                    {
+                        CustomerName = pOrderTable.CustomerName,
+                        Total = pOrderTable.Total,
+                        Address = pOrderTable.Address,
+                        Email = pOrderTable.Email,
+                        Phone = pOrderTable.Phone,
+                        Orders = pOrderTable.Orders,
+                        OrderTime = DateTime.Now
+                    };
+                    dbContexto.Add(order);
+                    await dbContexto.SaveChangesAsync();
+
+                    foreach (var detail in pOrderTable.orderDetails)
+                    {
+                        var orderDetail = new OrderDetail
+                        {
+                            FoodTableId = detail.FoodTableId,
+                            Quantity = detail.Quantity,
+                            Price = detail.Price,
+                            OrderTableId = order.Confirmation_ID
+                        };
+                        dbContexto.Add(orderDetail);
+                    }
+
+                    // Guardar todos los cambios en la base de datos
                     result = await dbContexto.SaveChangesAsync();
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocurrio un error al intentar crear");
+                throw new Exception($"Ocurrió un error al intentar crear la orden: {ex}");
+
             }
             return result;
         }
@@ -36,20 +58,19 @@ namespace HotPlateRestaurant.DAL
                 using (var dbContexto = new DBContexto())
                 {
                     var orderTable = await dbContexto.orderTable.FirstOrDefaultAsync(s => s.Confirmation_ID == pOrderTable.Confirmation_ID);
-                   orderTable.CustomerName = pOrderTable.CustomerName;
-                   orderTable.Total = pOrderTable.Total;
-                   orderTable.OrderTime = pOrderTable.OrderTime;
-                   orderTable.Address = pOrderTable.Address;
-                   orderTable.Email = pOrderTable.Email;
-                   orderTable.Phone = pOrderTable.Phone;
+                    orderTable.CustomerName = pOrderTable.CustomerName;
+                    orderTable.Total = pOrderTable.Total;
+                    orderTable.OrderTime = pOrderTable.OrderTime;
+                    orderTable.Address = pOrderTable.Address;
+                    orderTable.Email = pOrderTable.Email;
+                    orderTable.Phone = pOrderTable.Phone;
                     dbContexto.Update(orderTable);
                     result = await dbContexto.SaveChangesAsync();
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-
-                throw new Exception("Ocurrio un error interno");
+                throw new Exception($"Error {ex.Message}");
             }
             return result;
         }
@@ -92,12 +113,15 @@ namespace HotPlateRestaurant.DAL
         }
         public static async Task<List<orderTable>> ObtenerTodosAsync()
         {
+            orderTable pOrder = new orderTable();
             List<orderTable> orders = new List<orderTable>();
             try
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    orders = await dbContexto.orderTable.ToListAsync();
+                    orders = await dbContexto.orderTable
+                        .OrderByDescending(o => o.Confirmation_ID)
+                        .ToListAsync();
                 }
             }
             catch (Exception ex)
@@ -146,7 +170,7 @@ namespace HotPlateRestaurant.DAL
             }
             return orders;
         }
-    #endregion
+        #endregion
 
     }
 
