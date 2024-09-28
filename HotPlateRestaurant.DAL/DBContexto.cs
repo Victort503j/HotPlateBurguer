@@ -16,8 +16,7 @@ namespace HotPlateRestaurant.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("Server=localhost;Database=hotplaterestaurant;User=root;Password=password;",
-                new MySqlServerVersion(new Version(8, 0, 0)));
+            optionsBuilder.UseSqlServer(@"workstation id=hotplaterestaurantDB.mssql.somee.com;packet size=4096;user id=VictorCa_SQLLogin_1;pwd=dudf9m51s4;data source=hotplaterestaurantDB.mssql.somee.com;persist security info=False;initial catalog=hotplaterestaurantDB;TrustServerCertificate=True");
         }
     }
 }
