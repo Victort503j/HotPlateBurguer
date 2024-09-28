@@ -14,42 +14,55 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    var order = new orderTable
+                    using (var transaction = await dbContexto.Database.BeginTransactionAsync())
                     {
-                        CustomerName = pOrderTable.CustomerName,
-                        Total = pOrderTable.Total,
-                        Address = pOrderTable.Address,
-                        Email = pOrderTable.Email,
-                        Phone = pOrderTable.Phone,
-                        Orders = pOrderTable.Orders,
-                        OrderTime = DateTime.Now
-                    };
-                    dbContexto.Add(order);
-                    await dbContexto.SaveChangesAsync();
-
-                    foreach (var detail in pOrderTable.orderDetails)
-                    {
-                        var orderDetail = new OrderDetail
+                        try
                         {
-                            FoodTableId = detail.FoodTableId,
-                            Quantity = detail.Quantity,
-                            Price = detail.Price,
-                            OrderTableId = order.Confirmation_ID
-                        };
-                        dbContexto.Add(orderDetail);
-                    }
+                            var order = new orderTable
+                            {
+                                CustomerName = pOrderTable.CustomerName,
+                                Total = pOrderTable.Total,
+                                Address = pOrderTable.Address,
+                                Email = pOrderTable.Email,
+                                Phone = pOrderTable.Phone,
+                                Orders = pOrderTable.Orders,
+                                OrderTime = DateTime.Now
+                            };
+                            dbContexto.Add(order);
+                            await dbContexto.SaveChangesAsync(); 
 
-                    // Guardar todos los cambios en la base de datos
-                    result = await dbContexto.SaveChangesAsync();
+                            foreach (var detail in pOrderTable.orderDetails)
+                            {
+                                var orderDetail = new OrderDetail
+                                {
+                                    FoodTableId = detail.FoodTableId,
+                                    Quantity = detail.Quantity,
+                                    Price = detail.Price,
+                                    OrderTableId = order.Confirmation_ID 
+                                };
+                                dbContexto.Add(orderDetail);
+                            }
+
+                            result = await dbContexto.SaveChangesAsync();
+
+                            await transaction.CommitAsync();
+                        }
+                        catch (Exception ex)
+                        {
+                            await transaction.RollbackAsync();
+                            throw new Exception($"Error al guardar la orden y detalles: {ex.Message}");
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Ocurrió un error al intentar crear la orden: {ex}");
-
+                throw new Exception($"Ocurrió un error al intentar crear la orden: {ex.Message}");
             }
+
             return result;
         }
+
         public static async Task<int> ModificarAsync(orderTable pOrderTable)
         {
             int result = 0;

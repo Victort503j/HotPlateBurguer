@@ -20,36 +20,55 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    var food = new foodTable
+                    // Iniciar la transacción
+                    using (var transaction = await dbContexto.Database.BeginTransactionAsync())
                     {
-                        Title = pFoodTable.Title,
-                        Price = pFoodTable.Price,
-                        Picture = urlImage,
-                        CategoryId = pFoodTable.CategoryId,
-                    };
-                    dbContexto.Add(food);
-                    result += await dbContexto.SaveChangesAsync(); // Guarda y suma al resultado
+                        try
+                        {
+                            // 1. Guardar la comida
+                            var food = new foodTable
+                            {
+                                Title = pFoodTable.Title,
+                                Price = pFoodTable.Price,
+                                Picture = urlImage,
+                                CategoryId = pFoodTable.CategoryId,
+                            };
+                            dbContexto.Add(food);
+                            result += await dbContexto.SaveChangesAsync();
 
-                    var resultImage = new FoodImages
-                    {
-                        FoodId = food.Id, // Asigna el ID de food
-                        Title = pFoodImages.Title,
-                        AltText = pFoodImages.AltText,
-                        ImageUrl = urlImage,
-                        PublicId = publicId,
-                        foodTable = food,
-                        IsPrimary = pFoodImages.IsPrimary,
-                    };
-                    dbContexto.foodimages.Add(resultImage);
-                    result += await dbContexto.SaveChangesAsync(); // Guarda y suma al resultado
+                            // 2. Guardar la imagen relacionada
+                            var resultImage = new FoodImages
+                            {
+                                FoodId = food.Id, // Asigna el ID de food
+                                Title = pFoodImages.Title,
+                                AltText = pFoodImages.AltText,
+                                ImageUrl = urlImage,
+                                PublicId = publicId,
+                                foodTable = food,
+                                IsPrimary = pFoodImages.IsPrimary,
+                            };
+                            dbContexto.foodimages.Add(resultImage);
+                            result += await dbContexto.SaveChangesAsync();
+
+                            // Confirmar la transacción si todo salió bien
+                            await transaction.CommitAsync();
+                        }
+                        catch (Exception ex)
+                        {
+                            // Si ocurre un error, revertir la transacción
+                            await transaction.RollbackAsync();
+                            throw new Exception($"Error al guardar: {ex.Message}");
+                        }
+                    }
                 }
             }
             catch (MySqlException ex)
             {
-                throw new Exception($"Error {ex.Message}");
+                throw new Exception($"Error de MySQL: {ex.Message}");
             }
             return result;
         }
+
 
 
         public static async Task<int> ModificarAsync(foodTable pFoodTable)
