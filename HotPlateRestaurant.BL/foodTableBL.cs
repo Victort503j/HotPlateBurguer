@@ -11,9 +11,9 @@ namespace HotPlateRestaurant.BL
     public class foodTableBL
     {
 
-        public async Task<int> CrearAsync(foodTable pFoodTable)
+        public async Task<int> CrearAsync(foodTable pFoodTable, FoodImages pFoodImages, string urlImage, string publicId)
         {
-            return await foodTableDAL.CrearAsync(pFoodTable);
+            return await foodTableDAL.CrearAsync(pFoodTable, pFoodImages, urlImage, publicId);
         }
 
         public async Task<int> ModificarAsync(foodTable pFoodTable)

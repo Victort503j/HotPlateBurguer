@@ -12,6 +12,7 @@ namespace HotPlateRestaurant.DAL
 
         public DbSet<userTable> userTable { get; set; }
         public DbSet<OrderDetail> orderDetail { get; set; }
+        public DbSet<FoodImages> foodimages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

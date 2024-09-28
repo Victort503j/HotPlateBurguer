@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 
 
 namespace HotPlateRestaurant.DAL
@@ -12,24 +13,44 @@ namespace HotPlateRestaurant.DAL
     public class foodTableDAL
     {
 
-        public static async Task<int> CrearAsync(foodTable pFoodTable)
+        public static async Task<int> CrearAsync(foodTable pFoodTable, FoodImages pFoodImages, string urlImage, string publicId)
         {
             int result = 0;
             try
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    dbContexto.Add(pFoodTable);
-                    result = await dbContexto.SaveChangesAsync();
+                    var food = new foodTable
+                    {
+                        Title = pFoodTable.Title,
+                        Price = pFoodTable.Price,
+                        Picture = urlImage,
+                        CategoryId = pFoodTable.CategoryId,
+                    };
+                    dbContexto.Add(food);
+                    result += await dbContexto.SaveChangesAsync(); // Guarda y suma al resultado
+
+                    var resultImage = new FoodImages
+                    {
+                        FoodId = food.Id, // Asigna el ID de food
+                        Title = pFoodImages.Title,
+                        AltText = pFoodImages.AltText,
+                        ImageUrl = urlImage,
+                        PublicId = publicId,
+                        foodTable = food,
+                        IsPrimary = pFoodImages.IsPrimary,
+                    };
+                    dbContexto.foodimages.Add(resultImage);
+                    result += await dbContexto.SaveChangesAsync(); // Guarda y suma al resultado
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-
-                throw new Exception("Ocurrio un error interno");
+                throw new Exception($"Error {ex.Message}");
             }
             return result;
         }
+
 
         public static async Task<int> ModificarAsync(foodTable pFoodTable)
         {

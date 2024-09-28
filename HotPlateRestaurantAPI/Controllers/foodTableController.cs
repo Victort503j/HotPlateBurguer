@@ -1,7 +1,10 @@
-﻿using HotPlateRestaurant.BL;
+﻿using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
+using HotPlateRestaurant.BL;
 using HotPlateRestaurant.EN;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using MySqlConnector;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -30,20 +33,43 @@ namespace HotPlateRestaurantAPI.Controllers
 
         // POST api/<foodTableController>
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] object pFoodTable)
+        public async Task<ActionResult> Post([FromForm] string pFoodTable,[FromForm] string pDataImages, [FromForm]IFormFile file)
         {
+            Cloudinary cloudinary = new Cloudinary();
             try
             {
+                if (file == null || file.Length == 0)
+                {
+                    throw new ArgumentException("No file uploaded.");
+                }
+
+                var uploadResult = new ImageUploadResult();
+
+
+                using (var stream = file.OpenReadStream())
+                {
+                    var uploadParams = new ImageUploadParams
+                    {
+                        File = new FileDescription(file.FileName, stream),
+                        PublicId = $"food_images/{file.FileName}", // Personaliza el PublicId
+                        Overwrite = true // Sobrescribir si ya existe
+                    };
+
+                    uploadResult = cloudinary.Upload(uploadParams);
+                }
+
                 var option = new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true,
                 };
-                string srtFood = JsonSerializer.Serialize(pFoodTable);
-                foodTable foodTable = JsonSerializer.Deserialize<foodTable>(srtFood, option);
-                await foodTableBL.CrearAsync(foodTable);
+                //string srtFood = JsonSerializer.Serialize(pFoodTable);
+                FoodImages foodImages =JsonSerializer.Deserialize<FoodImages>(pDataImages, option);
+                foodTable foodTable = JsonSerializer.Deserialize<foodTable>(pFoodTable, option);
+
+                await foodTableBL.CrearAsync(foodTable, foodImages, uploadResult.SecureUrl.ToString(), uploadResult.PublicId.ToString());
                 return Ok();
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
 
                 return BadRequest(ex.Message);
