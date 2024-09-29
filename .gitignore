@@ -1,2 +1,14 @@
-# Ignorar carpetas de Visual Studio
+# Ignorar archivos y carpetas de Visual Studio
 .vs/
+bin/
+obj/
+
+# Ignorar archivos de depuración
+*.dll
+*.pdb
+*.exe
+
+# Ignorar archivos de caché
+*.cache
+*.suo
+*.json

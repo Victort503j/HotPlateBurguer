@@ -153,6 +153,26 @@ namespace HotPlateRestaurant.DAL
             return foodTables;
         }
 
+        public static async Task<List<foodTable>> ObtenerTodosPorCategoriasAsync(categoryTable pCategoryTable)
+        {
+            List<foodTable> food = new List<foodTable>();
+            try
+            {
+                using (var dbContext = new DBContexto())
+                {
+                    food = await dbContext.foodTable
+                        .Where(food => food.CategoryId == pCategoryTable.Id)
+                        .ToListAsync();
+                }
+                return food;
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception($"Error {ex.Message}");
+                
+            }
+        }
+
 
         internal static IQueryable<foodTable> QuerySelect(IQueryable<foodTable> pQuery, foodTable pFoodTable)
         {

@@ -23,6 +23,12 @@ namespace HotPlateRestaurantAPI.Controllers
             return await foodTableBL.ObtenerTodosAsync();
         }
 
+        [HttpGet("GetByCategory/{id}")]
+        public async Task<IEnumerable<foodTable>> GetByCategory(int id)
+        {
+            return await foodTableBL.ObtenerTodosPorCategoriasAsync(new categoryTable { Id = id});
+        }
+
 
         // GET api/<foodTableController>/5
         [HttpGet("{id}")]

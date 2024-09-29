@@ -1,5 +1,7 @@
 ﻿using HotPlateRestaurant.DAL;
 using HotPlateRestaurant.EN;
+using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +36,11 @@ namespace HotPlateRestaurant.BL
         public async Task<List<foodTable>> ObtenerTodosAsync()
         {
             return await foodTableDAL.ObtenerTodosAsync();
+        }
+
+        public async Task<List<foodTable>> ObtenerTodosPorCategoriasAsync(categoryTable pCategoryTable)
+        {
+            return await foodTableDAL.ObtenerTodosPorCategoriasAsync(pCategoryTable);
         }
 
         public async Task<List<foodTable>> BuscarAsync(foodTable pFoodTable)
