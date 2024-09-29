@@ -11,6 +11,7 @@ namespace HotPlateRestaurant.EN
     {
          public int Id { get; set; }
         public string Name { get; set; }
+        public string Icon { get; set; }
         [NotMapped]
         public int Top_Aux { get; set; }
     }

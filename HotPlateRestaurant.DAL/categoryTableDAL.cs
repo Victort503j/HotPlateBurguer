@@ -15,7 +15,12 @@ namespace HotPlateRestaurant.DAL
             int result = 0;
             using (var dbContexto = new DBContexto())
             {
-                dbContexto.Add(pCategoryTable);
+                var category = new categoryTable 
+                {
+                    Name = pCategoryTable.Name,
+                    Icon = pCategoryTable.Icon ?? "null",
+                };
+                dbContexto.Add(category);
                 result = await dbContexto.SaveChangesAsync();
             }
             return result;
@@ -28,6 +33,7 @@ namespace HotPlateRestaurant.DAL
             {
                 var categorytable = await dbContexto.categoryTable.FirstOrDefaultAsync(s => s.Id == pCategoryTable.Id);
                 categorytable.Name = pCategoryTable.Name;
+                categorytable.Icon = pCategoryTable.Icon ?? "null";
                 dbContexto.Update(categorytable);
                 result = await dbContexto.SaveChangesAsync();
             }
@@ -81,6 +87,8 @@ namespace HotPlateRestaurant.DAL
                 pQuery = pQuery.Where(s => s.Id == pCategoryTable.Id);
             if (!string.IsNullOrWhiteSpace(pCategoryTable.Name))
                 pQuery = pQuery.Where(s => s.Name.Contains(pCategoryTable.Name));
+            if (!string.IsNullOrWhiteSpace(pCategoryTable.Icon))
+                pQuery = pQuery.Where(s => s.Icon.Contains(pCategoryTable.Icon));
             pQuery = pQuery.OrderByDescending(s => s.Id).AsQueryable();
             if (pCategoryTable.Top_Aux > 0)
                 pQuery = pQuery.Take(pCategoryTable.Top_Aux).AsQueryable();
