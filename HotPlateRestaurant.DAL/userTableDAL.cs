@@ -80,6 +80,7 @@ namespace HotPlateRestaurant.DAL
                         user.Name = pUserTable.Name;
                         user.LastName = pUserTable.LastName;
                         user.Email = pUserTable.Email;
+                        user.Phone = pUserTable.Phone;
                         dbContexto.Update(user);
                         result = await dbContexto.SaveChangesAsync();
                     }
