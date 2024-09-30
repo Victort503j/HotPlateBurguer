@@ -144,45 +144,36 @@ namespace HotPlateRestaurant.DAL
             }
             return orders;
         }
-        internal static IQueryable<orderTable> QuerySelect(IQueryable<orderTable> pQuery,
-           orderTable pOrderTable)
+        internal static IQueryable<orderTable> QuerySelect(IQueryable<orderTable> pQuery, orderTable pOrderTable)
         {
-            if (pOrderTable.Confirmation_ID > 0)
-                pQuery = pQuery.Where(s => s.Confirmation_ID == pOrderTable.Confirmation_ID);
-            if (!string.IsNullOrWhiteSpace(pOrderTable.Orders))
-                pQuery = pQuery.Where(s => s.Total == pOrderTable.Total);
-            if (pOrderTable.OrderTime.Year > 1000)
+            if (!string.IsNullOrWhiteSpace(pOrderTable.CustomerName))
             {
-                DateTime initialDate = new DateTime(pOrderTable.OrderTime.Year,
-                    pOrderTable.OrderTime.Month, pOrderTable.OrderTime.Day, 0, 0, 0);
-                DateTime fechaFinal = initialDate.AddDays(-3).AddMilliseconds(1);
-                pQuery = pQuery.Where(s => s.OrderTime >= initialDate &&
-                s.OrderTime <= fechaFinal);
+                pQuery = pQuery.Where(s => s.CustomerName.Contains(pOrderTable.CustomerName));
             }
-            if (!string.IsNullOrWhiteSpace(pOrderTable.Address))
-                pQuery = pQuery.Where(s => s.Address.Contains(pOrderTable.Address));
-            if (!string.IsNullOrWhiteSpace(pOrderTable.Email))
-                pQuery = pQuery.Where(s => s.Email == pOrderTable.Email);
-            if (!string.IsNullOrWhiteSpace(pOrderTable.Phone))
-                pQuery = pQuery.Where(s => s.Phone == pOrderTable.Phone);
-            if (!string.IsNullOrWhiteSpace(pOrderTable.Orders))
-                pQuery = pQuery.Where(s => s.Orders == pOrderTable.Orders);
-            pQuery = pQuery.OrderByDescending(s => s.Confirmation_ID).AsQueryable();
-            if (pOrderTable.Top_Aux > 0)
-                pQuery = pQuery.Take(pOrderTable.Top_Aux).AsQueryable();
+
+            pQuery = pQuery.OrderByDescending(s => s.Confirmation_ID);
+
             return pQuery;
         }
+
+
         public static async Task<List<orderTable>> BuscarAsync(orderTable pOrderTable)
         {
-            var orders = new List<orderTable>();
+            var ordersTable = new List<orderTable>();
             using (var dbContexto = new DBContexto())
             {
                 var select = dbContexto.orderTable.AsQueryable();
                 select = QuerySelect(select, pOrderTable);
-                orders = await select.ToListAsync();
+
+                var sql = select.ToQueryString(); 
+                Console.WriteLine("Generated SQL: " + sql);
+
+                ordersTable = await select.ToListAsync();
             }
-            return orders;
+            return ordersTable;
         }
+
+
         #endregion
 
     }

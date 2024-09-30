@@ -7732,19 +7732,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\henry\\.nuget\\packages\\": {}
+    "C:\\Users\\Victo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
       "projectName": "HotPlateRestaurantAPI",
-      "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
-      "packagesPath": "C:\\Users\\henry\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\obj\\",
+      "projectPath": "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
+      "packagesPath": "C:\\Users\\Victo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\henry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7759,14 +7764,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj": {
-              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj"
+            "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj": {
+              "projectPath": "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj"
             },
-            "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj": {
-              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj"
+            "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj": {
+              "projectPath": "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj"
             },
-            "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
-              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj"
+            "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
+              "projectPath": "C:\\Users\\Victo\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj"
             }
           }
         }
@@ -7834,7 +7839,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

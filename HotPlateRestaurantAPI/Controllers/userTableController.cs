@@ -105,10 +105,20 @@ namespace HotPlateRestaurantAPI.Controllers
                 };
                 var strUserTable = JsonSerializer.Serialize(pUserTable);
                 userTable user = JsonSerializer.Deserialize<userTable>(strUserTable, option);
+
+                // Llamar al método de búsqueda en el servicio
                 return await userTableBl.BuscarAsync(user);
+            }
+            catch (JsonException jsonEx)
+            {
+                // Manejo de errores de deserialización
+                Console.WriteLine($"Error de deserialización: {jsonEx.Message}");
+                return new List<userTable>();
             }
             catch (Exception ex)
             {
+                // Manejo de errores genéricos
+                Console.WriteLine($"Error en la búsqueda: {ex.Message}");
                 return new List<userTable>();
             }
         }
