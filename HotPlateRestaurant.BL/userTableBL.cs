@@ -40,6 +40,11 @@ namespace HotPlateRestaurant.BL
             return await userTableDAL.BuscarAsync(pUserTable);
         }
 
+        public async Task<userTable> ExisteLoginUser(userTable pUserTable)
+        {
+            return await userTableDAL.ExisteLoginUser(pUserTable);
+        }
+
         public async Task<userTable> LoginAsync(userTable pUserTable)
         {
             return await userTableDAL.LoginAsync(pUserTable);

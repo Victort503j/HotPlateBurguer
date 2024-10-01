@@ -311,6 +311,22 @@
     ]
   },
   {
+    "ContainingType": "HotPlateRestaurantAPI.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pUser",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "HotPlateRestaurantAPI.Controllers.orderTableController",
     "Method": "Get",
     "RelativePath": "api/orderTable",

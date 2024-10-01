@@ -256,3 +256,4 @@ C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurantAPI\obj\Debug\net8.0\re
 C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurantAPI\obj\Debug\net8.0\HotPlateRestaurantAPI.pdb
 C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurantAPI\obj\Debug\net8.0\HotPlateRestaurantAPI.genruntimeconfig.cache
 C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurantAPI\obj\Debug\net8.0\ref\HotPlateRestaurantAPI.dll
+C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurantAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

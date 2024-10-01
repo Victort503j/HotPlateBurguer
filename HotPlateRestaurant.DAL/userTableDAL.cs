@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HotPlateRestaurant.EN;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 using static HotPlateRestaurant.EN.userTable;
 
 namespace HotPlateRestaurant.DAL
@@ -24,17 +25,46 @@ namespace HotPlateRestaurant.DAL
                 pUserTable.Password = strEncriptar;
             }
         }
-        private static async Task<bool> ExisteLogin(userTable pUserTable,
-           DBContexto pDbContexto)
+        private static async Task<bool> ExisteLogin(userTable pUserTable)
         {
-            bool result = false;
-            var loginUserExists = await pDbContexto.userTable.
-                FirstOrDefaultAsync(a => a.Email == pUserTable.Email &&
-                a.Id != pUserTable.Id);
-            if (loginUserExists != null && loginUserExists.Id > 0 &&
-                loginUserExists.Email == pUserTable.Email)
-                result = true;
-            return result;
+            using (var dbContexto = new DBContexto())
+            {
+                // Encriptamos la contraseña proporcionada antes de la comparación
+                //EncriptarMD5(pUserTable);
+
+                // Buscamos el usuario por email y contraseña (ya encriptada)
+                var loginUserExists = await dbContexto.userTable
+                    .FirstOrDefaultAsync(a => a.Email == pUserTable.Email &&
+                                              a.Password == pUserTable.Password);
+
+                // Si encontramos el usuario, devolvemos 'true'; de lo contrario, 'false'
+                return loginUserExists != null;
+            }
+        }
+
+        public static async Task<userTable> ExisteLoginUser(userTable pUserTable)
+        {
+            try
+            {
+                using (var dbContexto = new DBContexto())
+                {
+                    // Encriptamos la contraseña proporcionada antes de la comparación
+                    //EncriptarMD5(pUserTable);
+
+                    // Buscamos el usuario por email y contraseña (ya encriptada)
+                    var loginUserExists = await dbContexto.userTable
+                        .FirstOrDefaultAsync(a => a.Email == pUserTable.Email &&
+                                                  a.Password == pUserTable.Password);
+
+                    // Si encontramos el usuario, devolvemos 'true'; de lo contrario, 'false'
+                    return loginUserExists;
+                }
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
         #region "CRUD"
         public static async Task<int> GuardarAsync(userTable pUserTable)
@@ -44,7 +74,7 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    bool loginUserExists = await ExisteLogin(pUserTable, dbContexto);
+                    bool loginUserExists = await ExisteLogin(pUserTable);
                     if (loginUserExists == false)
                     {
                         pUserTable.CreatedAt = DateTime.Now;
@@ -72,7 +102,7 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    bool loginUserExists = await ExisteLogin(pUserTable, dbContexto);
+                    bool loginUserExists = await ExisteLogin(pUserTable);
                     if (loginUserExists == false)
                     {
                         var user = await dbContexto.userTable.FirstOrDefaultAsync(
