@@ -313,7 +313,7 @@
   {
     "ContainingType": "HotPlateRestaurantAPI.Controllers.LoginController",
     "Method": "Login",
-    "RelativePath": "api/Login/login",
+    "RelativePath": "api/Login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

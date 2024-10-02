@@ -28,7 +28,7 @@ namespace HotPlateRestaurantAPI.Controllers
         }
 
         // Acción para manejar el login y generar el token JWT
-        [HttpPost("login")]
+        [HttpPost]
         public async Task<ActionResult> Login([FromBody] object pUser)
         {
             // Validamos las credenciales del usuario a través del servicio de usuarios
@@ -54,10 +54,15 @@ namespace HotPlateRestaurantAPI.Controllers
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var key = Encoding.UTF8.GetBytes(secretKey);
 
+                var userData = $"{user.Name},{user.LastName}";
+
+
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new[] { 
-                        new Claim(ClaimTypes.Name, userResult.Name),
+                        new Claim(JwtRegisteredClaimNames.Sub, userResult.Id.ToString()),
+                        new Claim(JwtRegisteredClaimNames.Email, userResult.Email),
+                         new Claim("FullName", $"{userResult.Name} {userResult.LastName}")
                         //new Claim(ClaimTypes.Role, user.roles)
                     }),
                     Expires = DateTime.UtcNow.AddDays(1),

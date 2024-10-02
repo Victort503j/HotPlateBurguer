@@ -1,5 +1,6 @@
 ﻿using HotPlateRestaurant.BL;
 using HotPlateRestaurant.EN;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
@@ -7,6 +8,7 @@ using System.Text.Json;
 
 namespace HotPlateRestaurantAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class categoryTableController : ControllerBase

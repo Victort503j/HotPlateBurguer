@@ -5,11 +5,13 @@ using HotPlateRestaurant.EN;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using MySqlConnector;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace HotPlateRestaurantAPI.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class foodTableController : ControllerBase
