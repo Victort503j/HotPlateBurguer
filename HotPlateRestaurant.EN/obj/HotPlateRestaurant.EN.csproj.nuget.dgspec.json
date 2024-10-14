@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {}
+    "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {}
   },
   "projects": {
-    "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
+    "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj",
+        "projectUniqueName": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj",
         "projectName": "HotPlateRestaurant.EN",
-        "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj",
+        "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj",
         "packagesPath": "C:\\Users\\henry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\obj\\",
+        "outputPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.EN\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\henry\\AppData\\Roaming\\NuGet\\NuGet.Config",

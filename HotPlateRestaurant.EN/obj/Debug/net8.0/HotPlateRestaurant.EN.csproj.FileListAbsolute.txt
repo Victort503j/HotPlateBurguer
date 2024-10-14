@@ -50,3 +50,16 @@ C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurant.EN\obj\Debug\net8.0\Ho
 C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurant.EN\obj\Debug\net8.0\refint\HotPlateRestaurant.EN.dll
 C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.pdb
 C:\Users\henry\Desktop\HotPlateBurguer\HotPlateRestaurant.EN\obj\Debug\net8.0\ref\HotPlateRestaurant.EN.dll
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\bin\Debug\net8.0\HotPlateRestaurant.EN.deps.json
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\bin\Debug\net8.0\HotPlateRestaurant.EN.dll
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\bin\Debug\net8.0\HotPlateRestaurant.EN.pdb
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.csproj.AssemblyReference.cache
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.AssemblyInfoInputs.cache
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.AssemblyInfo.cs
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.csproj.CoreCompileInputs.cache
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.sourcelink.json
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.dll
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\refint\HotPlateRestaurant.EN.dll
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\HotPlateRestaurant.EN.pdb
+C:\Users\henry\Desktop\HotPlateBurguerBackEnd\HotPlateRestaurant.EN\obj\Debug\net8.0\ref\HotPlateRestaurant.EN.dll

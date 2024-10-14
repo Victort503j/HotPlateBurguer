@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a+XTBumWbRk=",
+  "dgSpecHash": "57HnMU2XhVg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj",
+  "projectFilePath": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\henry\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\henry\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

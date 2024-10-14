@@ -17,11 +17,8 @@ namespace HotPlateRestaurant.DAL
         {
             using (var md5 = MD5.Create())
             {
-                var result = md5.ComputeHash(Encoding.UTF8.GetBytes(
-                    pUserTable.Password));
-                var strEncriptar = "";
-                for (int i = 0; i < result.Length; i++)
-                    strEncriptar += result[i].ToString("x2").ToLower();
+                var result = md5.ComputeHash(Encoding.UTF8.GetBytes(pUserTable.Password));
+                var strEncriptar = BitConverter.ToString(result).Replace("-", "").ToLower();
                 pUserTable.Password = strEncriptar;
             }
         }
@@ -186,22 +183,22 @@ namespace HotPlateRestaurant.DAL
         internal static IQueryable<userTable> QuerySelect(IQueryable<userTable> pQuery,
             userTable pUserTable)
         {
-            if (pUserTable.Id > 0)
-                pQuery = pQuery.Where(s => s.Id == pUserTable.Id);
+            //if (pUserTable.Id > 0)
+            //    pQuery = pQuery.Where(s => s.Id == pUserTable.Id);
             if (!string.IsNullOrWhiteSpace(pUserTable.Name))
                 pQuery = pQuery.Where(s => s.Name.Contains(pUserTable.Name));
             if (!string.IsNullOrWhiteSpace(pUserTable.LastName))
                 pQuery = pQuery.Where(s => s.LastName.Contains(pUserTable.LastName));
             if (!string.IsNullOrWhiteSpace(pUserTable.Email))
                 pQuery = pQuery.Where(s => s.Email == pUserTable.Email);
-            if (pUserTable.CreatedAt.Year > 1000)
-            {
-                DateTime initialDate = new DateTime(pUserTable.CreatedAt.Year,
-                    pUserTable.CreatedAt.Month, pUserTable.CreatedAt.Day, 0, 0, 0);
-                DateTime fechaFinal = initialDate.AddDays(-3).AddMilliseconds(1);
-                pQuery = pQuery.Where(s => s.CreatedAt >= initialDate &&
-                s.CreatedAt <= fechaFinal);
-            }
+            //if (pUserTable.CreatedAt.Year > 1000)
+            //{
+            //    DateTime initialDate = new DateTime(pUserTable.CreatedAt.Year,
+            //        pUserTable.CreatedAt.Month, pUserTable.CreatedAt.Day, 0, 0, 0);
+            //    DateTime fechaFinal = initialDate.AddDays(-3).AddMilliseconds(1);
+            //    pQuery = pQuery.Where(s => s.CreatedAt >= initialDate &&
+            //    s.CreatedAt <= fechaFinal);
+            //}
             pQuery = pQuery.OrderByDescending(s => s.Id).AsQueryable();
             if (pUserTable.Top_Aux > 0)
                 pQuery = pQuery.Take(pUserTable.Top_Aux).AsQueryable();
@@ -232,8 +229,7 @@ namespace HotPlateRestaurant.DAL
             }
             return user;
         }
-        public static async Task<int> CambiarPasswordAsync(userTable pUserTable,
-            string pPasswordAnt)
+        public static async Task<int> CambiarPasswordAsync(userTable pUserTable, string pPasswordAnt)
         {
             int result = 0;
             var usuarioPassAnt = new userTable { Password = pPasswordAnt };

@@ -7693,11 +7693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
+      "projectUniqueName": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
       "projectName": "HotPlateRestaurantAPI",
-      "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
+      "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurantAPI\\HotPlateRestaurantAPI.csproj",
       "packagesPath": "C:\\Users\\henry\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurantAPI\\obj\\",
+      "outputPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurantAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\henry\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7715,14 +7715,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj": {
-              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj"
+            "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj": {
+              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.BL\\HotPlateRestaurant.BL.csproj"
             },
-            "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj": {
-              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj"
+            "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj": {
+              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.DAL\\HotPlateRestaurant.DAL.csproj"
             },
-            "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
-              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguer\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj"
+            "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj": {
+              "projectPath": "C:\\Users\\henry\\Desktop\\HotPlateBurguerBackEnd\\HotPlateRestaurant.EN\\HotPlateRestaurant.EN.csproj"
             }
           }
         }
