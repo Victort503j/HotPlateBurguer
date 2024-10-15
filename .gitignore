@@ -2,7 +2,9 @@
 .vs/
 bin/
 obj/
-
+*.suo
+*.user
+*.cache
 # Ignorar archivos de depuración
 *.dll
 *.pdb
