@@ -99,16 +99,28 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
+                    // Comprobamos si el login ya existe para evitar duplicados
                     bool loginUserExists = await ExisteLogin(pUserTable);
                     if (loginUserExists == false)
                     {
-                        var user = await dbContexto.userTable.FirstOrDefaultAsync(
-                            d => d.Id == pUserTable.Id);
-                        user.Name = pUserTable.Name;
-                        user.LastName = pUserTable.LastName;
-                        user.Email = pUserTable.Email;
-                        user.Phone = pUserTable.Phone;
+                        // Buscar el usuario por su Id
+                        var user = await dbContexto.userTable.FirstOrDefaultAsync(d => d.Id == pUserTable.Id);
+
+                        if (user == null)
+                        {
+                            throw new Exception("User not found");
+                        }
+
+                        // Actualizar solo los campos que tienen valor en el objeto proporcionado (pUserTable)
+                        user.Name = !string.IsNullOrEmpty(pUserTable.Name) ? pUserTable.Name : user.Name;
+                        user.LastName = !string.IsNullOrEmpty(pUserTable.LastName) ? pUserTable.LastName : user.LastName;
+                        user.Email = !string.IsNullOrEmpty(pUserTable.Email) ? pUserTable.Email : user.Email;
+                        user.Phone = !string.IsNullOrEmpty(pUserTable.Phone) ? pUserTable.Phone : user.Phone;
+
+                        // Marcar la entidad como modificada
                         dbContexto.Update(user);
+
+                        // Guardar los cambios en la base de datos
                         result = await dbContexto.SaveChangesAsync();
                     }
                     else
@@ -119,11 +131,12 @@ namespace HotPlateRestaurant.DAL
             }
             catch (Exception ex)
             {
-                result = 0;
-                throw new Exception("An internal error ocurred");
+                // Manejar la excepción
+                throw new Exception($"An internal error occurred: {ex.Message}", ex);
             }
             return result;
         }
+
         public static async Task<int> EliminarAsync(userTable pUserTable)
         {
             int result = 0;
@@ -133,7 +146,12 @@ namespace HotPlateRestaurant.DAL
                 {
                     var user = await dbContexto.userTable.FirstOrDefaultAsync(
                         f => f.Id == pUserTable.Id);
-                    dbContexto.userTable.Remove(user);
+                    if (user == null)
+                    {
+                        throw new Exception($"Error al Eliminar");
+                    }
+                    user.Status = (byte)Estatus_Usuario.INACTIVE;
+                    //dbContexto.userTable.Remove(user);
                     result = await dbContexto.SaveChangesAsync();
                 }
             }
