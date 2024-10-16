@@ -125,10 +125,10 @@ namespace HotPlateRestaurant.DAL
                     foodTable = await dbContexto.foodTable.FirstOrDefaultAsync(s => s.Id == pFoodTable.Id);
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
 
-                throw new Exception("Ocurrio un error interno");
+                throw new Exception($"Ocurrio un error interno  {ex}");
             }
             return foodTable;
         }

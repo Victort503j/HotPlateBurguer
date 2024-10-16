@@ -27,7 +27,7 @@ namespace HotPlateRestaurant.DAL
             using (var dbContexto = new DBContexto())
             {
                 // Encriptamos la contraseña proporcionada antes de la comparación
-                //EncriptarMD5(pUserTable);
+                EncriptarMD5(pUserTable);
 
                 // Buscamos el usuario por email y contraseña (ya encriptada)
                 var loginUserExists = await dbContexto.userTable
@@ -45,8 +45,8 @@ namespace HotPlateRestaurant.DAL
             {
                 using (var dbContexto = new DBContexto())
                 {
-                    // Encriptamos la contraseña proporcionada antes de la comparación
-                    //EncriptarMD5(pUserTable);
+                    //Encriptamos la contraseña proporcionada antes de la comparación
+                    EncriptarMD5(pUserTable);
 
                     // Buscamos el usuario por email y contraseña (ya encriptada)
                     var loginUserExists = await dbContexto.userTable
