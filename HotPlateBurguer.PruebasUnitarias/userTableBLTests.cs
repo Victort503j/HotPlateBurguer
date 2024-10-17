@@ -55,19 +55,19 @@ namespace HotPlateRestaurant.BL.Tests
         [TestMethod()]
         public async Task ObtenerPorIdAsyncTest()
         {
-            var result = await usuarioBl.ObtenerTodosAsync();
-            Assert.IsTrue(result.Count > 0); // Verificar si se obtuvieron registros
-        }
-
-        [TestMethod()]
-        public async Task ObtenerTodosAsyncTest()
-        {
             userTable usuario = new userTable
             {
                 Id = usuarioInicial.Id,
             };
             var result = await usuarioBl.ObtenerPorIdAsync(usuario);
             Assert.IsTrue(result.Id == usuario.Id); // Verificar si se obtuvo el registro por ID
+        }
+
+        [TestMethod()]
+        public async Task ObtenerTodosAsyncTest()
+        {
+            var result = await usuarioBl.ObtenerTodosAsync();
+            Assert.IsTrue(result.Count > 0); // Verificar si se obtuvieron registros
         }
 
         [TestMethod()]
