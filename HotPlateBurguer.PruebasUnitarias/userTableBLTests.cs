@@ -45,11 +45,10 @@ namespace HotPlateRestaurant.BL.Tests
                 LastName = usuarioInicial.LastName,
                 Phone = usuarioInicial.Phone,
                 Email = usuarioInicial.Email,
-                //Password = usuarioInicial.Password, // Utiliza la contraseña actualizada
                 Status = (byte)Estatus_Usuario.INACTIVE
             };
             var result = await usuarioBl.ModificarAsync(usuario);
-            Assert.AreEqual(1, result); // Comprobar si se modificó correctamente
+            Assert.AreEqual(1, result);
         }
 
         [TestMethod()]
@@ -60,14 +59,14 @@ namespace HotPlateRestaurant.BL.Tests
                 Id = usuarioInicial.Id,
             };
             var result = await usuarioBl.ObtenerPorIdAsync(usuario);
-            Assert.IsTrue(result.Id == usuario.Id); // Verificar si se obtuvo el registro por ID
+            Assert.IsTrue(result.Id == usuario.Id); 
         }
 
         [TestMethod()]
         public async Task ObtenerTodosAsyncTest()
         {
             var result = await usuarioBl.ObtenerTodosAsync();
-            Assert.IsTrue(result.Count > 0); // Verificar si se obtuvieron registros
+            Assert.IsTrue(result.Count > 0); 
         }
 
         [TestMethod()]
