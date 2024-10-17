@@ -1,16 +1,13 @@
-# Ignorar archivos y carpetas de Visual Studio
-.vs/
-bin/
-obj/
-*.suo
-*.user
-*.cache
-# Ignorar archivos de depuración
-*.dll
-*.pdb
-*.exe
+# Ignorar todas las carpetas .vs, bin, obj en todos los niveles
+**/.vs/
+**/bin/
+**/obj/
 
-# Ignorar archivos de caché
-*.cache
-*.suo
-*.json
+# Ignorar archivos específicos en todos los niveles
+**/*.suo
+**/*.user
+**/*.cache
+**/*.dll
+**/*.pdb
+**/*.exe
+**/*.json
