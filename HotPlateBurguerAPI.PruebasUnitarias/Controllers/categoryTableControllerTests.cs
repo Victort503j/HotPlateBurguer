@@ -5,6 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotPlateRestaurant.EN;
+using static System.Net.WebRequestMethods;
+using HotPlateRestaurant.EN.Payments;
+using static HotPlateRestaurant.EN.categoryTable;
+using Microsoft.AspNetCore.Mvc.Testing;
+using System.Net.Http.Json;
 
 namespace HotPlateRestaurantAPI.Controllers.Tests
 {
@@ -12,39 +18,69 @@ namespace HotPlateRestaurantAPI.Controllers.Tests
     public class categoryTableControllerTests
     {
         [TestMethod()]
-        public void GetTest()
+        public async Task GetTest()
         {
-            Assert.Fail();
+            using var aplication = new WebApplicationFactory<Program>();
+            using var _httpClient = aplication.CreateClient();
+            var categories = await _httpClient.GetFromJsonAsync<categoryTable[]>("api/categoryTable");
         }
 
         [TestMethod()]
-        public void GetTest1()
+        public async Task GetTest1()
         {
-            Assert.Fail();
+            using var aplication = new WebApplicationFactory<Program>();
+            using var _httpClient = aplication.CreateClient();
+            var categories = await _httpClient.GetFromJsonAsync<categoryTable>("api/categoryTable/1");
         }
 
         [TestMethod()]
-        public void PostTest()
+        public async Task PostTest()
         {
-            Assert.Fail();
+            using var aplication = new WebApplicationFactory<Program>();
+            using var _httpCliente = aplication.CreateClient();
+            var category = new categoryTable
+            {
+                Name = "Test",
+                Icon = "Test"
+            };
+            var result = await _httpCliente.PostAsJsonAsync<categoryTable>("api/categoryTable", category);
         }
 
         [TestMethod()]
-        public void PutTest()
+        public async Task PutTest()
         {
-            Assert.Fail();
+            using var aplication = new WebApplicationFactory<Program>();
+            using var _httpCliente = aplication.CreateClient();
+            var category = new categoryTable
+            {
+                Id = 12,
+                Name = "Test",
+                Icon = "Test"
+            };
+            var result = await _httpCliente.PutAsJsonAsync<categoryTable>("api/categoryTable/" + category.Id, category);
         }
 
         [TestMethod()]
-        public void DeleteTest()
+        public async Task DeleteTest()
         {
-            Assert.Fail();
+            using var aplication = new WebApplicationFactory<Program>();
+            using var _httpClient = aplication.CreateClient();
+            var category = new categoryTable
+            {
+                Id = 12
+            };
+            var result = await _httpClient.DeleteAsync("api/categoryTable/" + category.Id);
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            using var aplication = new WebApplicationFactory<Program>();
+            using var _httpClient = aplication.CreateClient();
+            var category = new categoryTable
+            {
+                Id = 5
+            };
         }
     }
 }

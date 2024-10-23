@@ -8,7 +8,7 @@ using System.Text.Json;
 
 namespace HotPlateRestaurantAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class categoryTableController : ControllerBase
