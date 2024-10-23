@@ -9,11 +9,11 @@ namespace HotPlateRestaurant.BL.Tests
         // Usuario inicial con datos consistentes
         private static userTable usuarioInicial = new userTable
         {
-            Id = 34,
-            Name = "Manuel",
-            LastName = "Hernandez",
+            Id = 41,
+            Name = "Henry",
+            LastName = "Carias",
             Phone = "76313323",
-            Email = "manuel@gmail.com",
+            Email = "henry@gmail.com",
             Password = "P@ssWord#123" // Password original en la base de datos
         };
 
@@ -45,6 +45,7 @@ namespace HotPlateRestaurant.BL.Tests
                 LastName = usuarioInicial.LastName,
                 Phone = usuarioInicial.Phone,
                 Email = usuarioInicial.Email,
+                Password = usuarioInicial.Password,
                 Status = (byte)Estatus_Usuario.INACTIVE
             };
             var result = await usuarioBl.ModificarAsync(usuario);
@@ -111,7 +112,7 @@ namespace HotPlateRestaurant.BL.Tests
         {
             var usuario = new userTable
             {
-                Id = 40
+                Id = 46
             };
             var result = await usuarioBl.DeleteAsync(usuario);
             Assert.AreEqual(1, result); // Comprobar si se eliminó correctamente
